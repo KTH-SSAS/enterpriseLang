@@ -53,9 +53,9 @@ The enterpriseLang is a MAL-based domain specific language for assessing the cyb
 ## Quick Info
 
 - Active members:
-  - Wenjun Xiong
+  - Wenjun Xiong(https://www.kth.se/profile/wenjx/)
 - Status: running :green_circle:
-- Timeline: [2019-2021]
+- Timeline: 2019-2021
 
 ### Project links
 
