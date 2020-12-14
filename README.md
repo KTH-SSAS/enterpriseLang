@@ -63,8 +63,6 @@ The enterpriseLang is a MAL-based domain specific language for assessing the cyb
 
 ## Description
 
-## enterpriselang
-
 enterpriselang is a domain-specific MAL language based on the MITRE ATT&CK® Matrix, which intends to assess the cyber security of enterprise systems from a holistic point of view.
 
 * We keep updating the file `enterpriselang.mal` and the folder `securiCAD_models`. The files within the folder `single_attacks` are not up-to-date, please refer to the file `enterpriselang.mal`. The `pom.xml` shall be used to support advanced distributions.
@@ -74,7 +72,7 @@ enterpriselang is a domain-specific MAL language based on the MITRE ATT&CK® Mat
 mvn clean package -PsecuriCAD -Dmaven.test.skip
 ```
 
-### This project can be built according to exampleLang (https://github.com/mal-lang/exampleLang)
+### This project can be built according to exampleLang instructions (https://github.com/mal-lang/exampleLang)
 
 * The file `pom.xml` is the Maven configuration file of the project, make sure that <kernelcad.version> is 1.6.2-SNAPSHOT in pom.xml. 
 * The directory `src/main/mal` contains the MAL specification
