@@ -93,11 +93,8 @@ mvn clean package -PsecuriCAD -Dmaven.test.skip
 
 ## Resources
 - Add here in a bullet list to resources relevant to the project, for instance:
-- [ISO-21434](https://www.iso.org/standard/70918.html) - PDF needs to be purchased
-- [vehicleLang](https://github.com/mal-lang/vehicleLang)
 - [MAL - Meta Attack  Language](https://mal-lang.org)
 - [SecuriCAD](https://foreseeti.com)
-- [ThreatMOVE project](https://autosec.se/projects/)
 
 <br>
 
