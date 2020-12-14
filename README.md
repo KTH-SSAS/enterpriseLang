@@ -92,8 +92,8 @@ mvn clean package -PsecuriCAD -Dmaven.test.skip
 - [ ] enterpriseLang - validation / testing
 
 ## Resources
-- Add here in a bullet list to resources relevant to the project, for instance:
-- [MAL - Meta Attack  Language](https://mal-lang.org)
+- [enterpriseLang](https://github.com/mal-lang/enterpriseLang)
+- [MAL - Meta Attack Language](https://mal-lang.org)
 - [SecuriCAD](https://foreseeti.com)
 
 <br>
