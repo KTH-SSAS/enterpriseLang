@@ -45,7 +45,7 @@ The enterpriseLang is a MAL-based domain specific language for assessing the cyb
 
 ## Table of contents
 - [Quick Info](#quick-info)
-  * [Project links](#https://github.com/mal-lang/enterpriseLang)
+  * [Project links]
 - [Description](#description)
 - [Work Products](#work-products)
 - [Resources](#resources)
@@ -54,12 +54,12 @@ The enterpriseLang is a MAL-based domain specific language for assessing the cyb
 
 - Active members:
   - Wenjun Xiong
-- Status: running :green_circle: (or pending :yellow_circle:, completed :orange_circle:)
-- Timeline: [2019-2021](self-link-to github-project/milestones)
+- Status: running :green_circle:
+- Timeline: [2019-2021]
 
 ### Project links
 
-- [Project links](#https://github.com/mal-lang/enterpriseLang)
+- [https://github.com/mal-lang/enterpriseLang]
 
 ## Description
 
