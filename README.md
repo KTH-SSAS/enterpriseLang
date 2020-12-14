@@ -45,7 +45,7 @@ The enterpriseLang is a MAL-based domain specific language for assessing the cyb
 
 ## Table of contents
 - [Quick Info](#quick-info)
-  * [Project links]
+  * [Project links](https://github.com/mal-lang/enterpriseLang)
 - [Description](#description)
 - [Work Products](#work-products)
 - [Resources](#resources)
@@ -59,7 +59,7 @@ The enterpriseLang is a MAL-based domain specific language for assessing the cyb
 
 ### Project links
 
-- [https://github.com/mal-lang/enterpriseLang]
+- [enterpriseLang](https://github.com/mal-lang/enterpriseLang)
 
 ## Description
 
@@ -87,8 +87,8 @@ mvn clean package -PsecuriCAD -Dmaven.test.skip
 
 ## Work Products
 
-- [ ] enterpriseLang v1 - threat modeling
-- [ ] enterpriseLang v2 - attack simulations (probabilities) 
+- [x] enterpriseLang v1 - threat modeling
+- [ ] enterpriseLang v2 - attack simulations (in progress) 
 - [ ] enterpriseLang - validation / testing
 
 ## Resources
