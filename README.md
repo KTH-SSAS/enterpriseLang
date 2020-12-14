@@ -7,7 +7,7 @@ in markdown. -->
   <img src=".images/top.jpg" alt="Decorative image">
   <br>
   <br>
-  <span>Project Name</span>
+  <span>enterpriseLang</span>
   <br>
 
   <!-- Below, there are 4 small button-like images. These are called "badges"
@@ -39,77 +39,57 @@ in markdown. -->
   <br>
 </h1>
 
-<p align="justify">
-  A README template for projects of the SSAS group.
+<p align="justify"> 
+The enterpriseLang is a MAL-based domain specific language for assessing the cyber security of enterprise systems.
 <p>
 
 ## Table of contents
 - [Quick Info](#quick-info)
-  * [Project links](#project-links)
+  * [Project links](#https://github.com/mal-lang/enterpriseLang)
 - [Description](#description)
 - [Work Products](#work-products)
 - [Resources](#resources)
 
 ## Quick Info
 
-- Supervisor: [supervisor's full name](link-to-online-profile)
 - Active members:
-  - [member 1](link-to-online-profile)
-- Past members:
-  - [First Last](link-to-online-profile)
+  - Wenjun Xiong
 - Status: running :green_circle: (or pending :yellow_circle:, completed :orange_circle:)
-- Timeline: [VT-20](self-link-to github-project/milestones)
-- Parent project: [name-of-umbrella-project](link-to-umbrella-project)
+- Timeline: [2019-2021](self-link-to github-project/milestones)
 
 ### Project links
 
-- post here a list of links to project assets that are not located in the github
-  repo
-- [Overleaf project](link-to-overleaf-project)
-- [dropbox folder for large files](link-to-dropbox-folder)
-- [other link](#)
+- [Project links](#https://github.com/mal-lang/enterpriseLang)
 
 ## Description
 
-(This section should hold your project's detailed description)
+## enterpriselang
 
-The idea is to use github.com as a central point of reference for our group's
-projects. A github.com organization ([KTH-SSAS](https://github.com/KTH-SSAS))
-has been created, where all SSAS members are added to. The organization is
-organized in teams that reflect the actual "teams" and collaborations that exist
-in the group.
+enterpriselang is a domain-specific MAL language based on the MITRE ATT&CK® Matrix, which intends to assess the cyber security of enterprise systems from a holistic point of view.
 
-Each team will create one or more git repos on github.com under the KTH-SSAS
-organization where project assets (e.g. tex documents, small files, code, etc)
-is added. Github also has an issue tracker that can be used to keep track of the
-pending work in a visible way, where other team members or external
-collaborators can keep track of the work ahead and discuss.
+* We keep updating the file `enterpriselang.mal` and the folder `securiCAD_models`. The files within the folder `single_attacks` are not up-to-date, please refer to the file `enterpriselang.mal`. The `pom.xml` shall be used to support advanced distributions.
+* The test cases can be found in `src/test/java/org/mal_lang/enterpriselang/test/`, while another `pom.xml` in the folder `src` shall be used for testing.
+* Please compile the language with the following command on the command line run in securiCAD:
+```
+mvn clean package -PsecuriCAD -Dmaven.test.skip
+```
 
-This README is meant as a common template for all KTH-SSAS projects. The aim is
-to have a uniform look and feel that is also usable and productive. When you use
-this template, try to conform with its structure. __If it is not
-sufficient/proper for you project, of course feel free to deviate or ignore
-it.__ Or, if you have suggestions, create a [new
-issue](https://github.com/KTH-SSAS/skeleton/issues/new) or [pull
-request](https://github.com/KTH-SSAS/skeleton/pull/new).
+### This project can be built according to exampleLang (https://github.com/mal-lang/exampleLang)
 
-To use this skeleton repository as a template for your project, simply create a new repository and select this repo as the template:
-
-
-![Screenshot_20201003_112921](https://user-images.githubusercontent.com/11805218/94988207-dc43c300-056b-11eb-9ae7-7041bd438133.png)
-
-See [this repo](https://github.com/KTH-SSAS/threatmove-iso-21434) for
-an example.
+* The file `pom.xml` is the Maven configuration file of the project, make sure that <kernelcad.version> is 1.6.2-SNAPSHOT in pom.xml. 
+* The directory `src/main/mal` contains the MAL specification
+  `exampleLang.mal`, which is the MAL specification of exampleLang.
+* The directory `src/main/resources/icons` contains SVG icons for the
+  assets in exampleLang.
+* The directory `src/test/java/org/mal_lang/examplelang/test`
+  contains the unit tests of exampleLang.
+* It requires a new alpha version of securiCAD Professional. The instructions on how to download it here: https://github.com/foreseeti/foreseeti-maven-repo.
 
 ## Work Products
 
-- [ ] A checklist of pending and completed work products of the project, i.e.
-  project deliverables.
-- [x] An already produced deliverable is marked with a check.
-- [x] If the deliverable can be accessed online (or in the github repo) add
-  a [link](#) to it. For example, if the project includes the production of
-  a paper, link to the published paper in a journal.
-- [ ] If the deliverable is not yet delivered, leave the checkbox unchecked.
+- [ ] enterpriseLang v1 - threat modeling
+- [ ] enterpriseLang v2 - attack simulations (probabilities) 
+- [ ] enterpriseLang - validation / testing
 
 ## Resources
 - Add here in a bullet list to resources relevant to the project, for instance:
