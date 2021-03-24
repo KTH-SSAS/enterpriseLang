@@ -444,6 +444,7 @@ category Software {
         & trustedRelationship //(0.40)*TruncatedNormal(0.042,0.021)]
             user info: "Access through trusted third party relationship exploits an existing connection that may not be protected or receives less scrutiny than standard mechanisms of gaining access to a network." 
             developer info: "Sources for distribution result: accenture.com/_acnmedia/PDF-116/Accenture-Cybersecurity-Report-2020.pdf, https://enterprise.verizon.com/resources/reports/DBIR_2018_Report_execsummary.pdf" 
+            ->  os.validAccounts
 
         | attemptUseThirdpartySoftware @hidden //(0.70)]
             user info: "Adversaries may gain access to and use third-party application deployment systems installed within an enterprise network." 
@@ -832,7 +833,7 @@ category Software {
         & trustedRelationship //(0.40)*TruncatedNormal(0.042,0.021)]
             user info: "Access through trusted third party relationship exploits an existing connection that may not be protected or receives less scrutiny than standard mechanisms of gaining access to a network." 
             developer info: "Sources for distribution result: accenture.com/_acnmedia/PDF-116/Accenture-Cybersecurity-Report-2020.pdf, https://enterprise.verizon.com/resources/reports/DBIR_2018_Report_execsummary.pdf" 
-            +>  os.validAccounts // Valid Accounts used by the other party for access to internal network systems may be compromised
+            //->  os.attemptValidAccounts // Valid Accounts used by the other party for access to internal network systems may be compromised
 
         | attemptUseThirdpartySoftware @hidden //(0.70)]
             user info: "Adversaries may gain access to and use third-party application deployment systems installed within an enterprise network." 
@@ -863,11 +864,6 @@ category Software {
             user info: "https://attack.mitre.org/mitigations/M1030/"
             +>  trustedRelationship,
                 useThirdpartySoftware
-    }
-
-    asset VideoCallApplication extends Service { 
-        | collectVideo @hidden
-            +>  os.computer.collectVideo
     }
 
     asset CloudService extends Service {
@@ -5221,9 +5217,6 @@ category Software {
             user info: "Aversaries may search compromised systems to find and obtain insecurely stored credentials."
             +>  bashHistory
 
-        | windowsManagementInstrumentation
-            ->  commandAndScriptingInterpreter
-
         | attemptKeychain @hidden
             ->  keychain
 
@@ -5706,7 +5699,9 @@ category Hardware {
 
         | unresponsive
 
-        & hardwareAdditions 
+        & hardwareAdditions
+            ->  os.executeCode,
+                os.attemptGatekeeperBypass
 
         | attemptExfiltrationOverPhysicalMedium @hidden
             ->  exfiltrationOverPhysicalMedium
@@ -5737,51 +5732,22 @@ category Hardware {
             ->  exfiltrationOverPhysicalMedium
     }
 
-    asset HardwareAddition extends Computer {
-        | physicalAccess //(0.11)*Exponential(8)]
-            developer info: "Sources for distribution result: https://www.if-insurance.com/large-enterprises/insight/risk-consulting-magazine/risk-consulting-2019-1/physical-security-controls-of-it-and-ics, https://go.crowdstrike.com/rs/281-OBQ-266/images/Report2020CrowdStrikeGlobalThreatReport.pdf"
-            ->  hardwareAdditions,
-                os.attemptAccessibilityFeatures
-            
-        & hardwareAdditions 
-            user info: "Adversaries may introduce computer accessories, computers, or networking hardware into a system or network that can be used as a vector to gain access." 
-            +>  os.executeCode,
-                os.attemptGatekeeperBypass
-    }
-
     asset PeripheralDevice {
         | collectVideo
+            ->  computer.collectVideo
 
         | collectAudio //(0.74)*Exponential(0.1)]
             developer info: "Sources for distribution results: https://capec.mitre.org/data/definitions/634.html and Video Capture results"
+            ->  computer.collectAudio
 
         | dataExfiltration
 
         | infectedMedia
+            ->  dataFromRemovableMedia
 
         | dataFromRemovableMedia //(0.5352)*Exponential(6.47)]
             developer info: "Sources for distribution results: See dataFromRemovableMedia.md file and automatedCollection.md"
-    }
-
-    asset Webcam extends PeripheralDevice {
-        | collectVideo
-            +>  computer.collectVideo
-    }
-
-    asset RemovableMedia extends PeripheralDevice {
-        | dataFromRemovableMedia //(0.5352)*Exponential(6.47)]
-            developer info: "Sources for distribution results: See dataFromRemovableMedia.md file and automatedCollection.md"
-            +>  computer.os.sensitiveDataCollected
-
-        | infectedMedia
-
-        | dataExfiltration
-    }
-    
-    asset Microphone extends PeripheralDevice {
-        | collectAudio //(0.74)*Exponential(0.1)]
-            developer info: "Sources for distribution results: https://capec.mitre.org/data/definitions/634.html and Video Capture results"
-            +>  computer.collectAudio
+            ->  computer.os.sensitiveDataCollected
     }
 }
 
